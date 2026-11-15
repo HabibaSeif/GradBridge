@@ -48,13 +48,15 @@ npm run lint
 
 ## Deployment (GitHub Pages)
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which builds the app and publishes it to
-`https://<user>.github.io/<repo>/`. The workflow passes the repository name as `BASE_PATH`, so React Router and
+Live site: **https://habibaseif.github.io/GradBridge/**
+
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the app and publishes the result to the
+`gh-pages` branch. GitHub Pages serves the site from that branch. The workflow passes the repository name as `BASE_PATH`, so React Router and
 asset URLs work under that sub-path. `404.html` is a copy of `index.html`, so links to inner pages (for example
 `/matches`) still load when opened directly or refreshed.
 
-If the first run fails at "Configure Pages", open **Settings → Pages**, set **Source** to **GitHub Actions**, then
-re-run the workflow from the **Actions** tab.
+If the site does not appear, open **Settings → Pages** and set **Source** to *Deploy from a branch*, branch
+`gh-pages`, folder `/ (root)`.
 
 ### Demo accounts
 
